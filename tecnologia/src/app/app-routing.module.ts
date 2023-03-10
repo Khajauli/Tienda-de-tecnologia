@@ -4,6 +4,7 @@ import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { ContactosComponent } from './components/contactos/contactos.component';
 import { EdicionComponent } from './components/edicion/edicion.component';
 import { HomeComponent } from './components/home/home.component';
+import { InfoProductoComponent } from './components/info-producto/info-producto.component';
 import { NuevoProductoComponent } from './components/nuevo-producto/nuevo-producto.component';
 
 
@@ -13,6 +14,7 @@ const routes: Routes = [
     {path:'contactos',component:ContactosComponent},
     {path:'catalogo',component:CatalogoComponent},
     {path:'nuevoProducto',component:NuevoProductoComponent},
+    {path:'infoProducto/:id',component:InfoProductoComponent},
     {path:'**',component:HomeComponent}
 
   ];

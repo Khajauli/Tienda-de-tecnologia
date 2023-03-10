@@ -1,1 +1,15 @@
-<p>catalogo works!</p>
+<h2>Catalogo de productos</h2>
+<ul>
+    <li *ngFor="let producto of productos"  class="productos">
+        <a [routerLink]="['producto/', producto._id]">
+            <img src="{{url+'get-imagen/'+producto.imagen}}" *ngIf="producto.imagen">
+            <h3>{{producto.nombre}}</h3>
+            <br>
+            <h3>{{producto.descripcion}}</h3>
+            <br>
+            <h3>Nos quedan {{producto.cantidad}}!!</h3>
+            <br>
+            <h3>A tan solo {{producto.precio}}!!</h3>
+        </a>
+    </li>
+</ul>

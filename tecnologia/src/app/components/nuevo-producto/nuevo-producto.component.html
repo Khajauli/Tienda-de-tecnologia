@@ -1,7 +1,7 @@
 <div class="container">
     <h2>{{titulo}}</h2>
     <div class="message success" *ngIf="status=='success'">
-        La producto se ha guardado correctamente, puedes verla <a [routerLink]="['/inicio']">aquí</a>.
+        La producto se ha guardado correctamente, puedes verla <a [routerLink]="['/infoProducto',idGuardado]">aquí</a>.
     </div>
     <div class="message failed" *ngIf="status=='failed'">
         La producto no se ha podido guardar.

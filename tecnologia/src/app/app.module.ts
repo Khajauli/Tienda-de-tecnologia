@@ -12,6 +12,7 @@ import { PieComponent } from './components/pie/pie.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule} from '@angular/common/http';
+import { InfoProductoComponent } from './components/info-producto/info-producto.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule} from '@angular/common/http';
     EdicionComponent,
     ContactosComponent,
     EncabezadoComponent,
-    PieComponent
+    PieComponent,
+    InfoProductoComponent
   ],
   imports: [
     BrowserModule,
