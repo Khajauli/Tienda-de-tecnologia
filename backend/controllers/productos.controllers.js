@@ -54,10 +54,10 @@ var controller={
         var productoId=req.params.id;
         var update=req.body;
         if(productoId==null) return res.status(4004).send({message:"El producto no existe"});
-        Producto.findByIdAndUpdate(productoId,update,{new:true},(err,prodctoActualizado)=>{
+        Producto.findByIdAndUpdate(productoId,update,{new:true},(err,productoActualizado)=>{
             if(err) return res.status(500).send({message:"Error al actualizar los datos"});
-            if(!prodctoActualizado) return res.status(404).send({message:'No se puede actualizar el prodcto'});
-            return res.status(200).send({prodctoActualizado});
+            if(!productoActualizado) return res.status(404).send({message:'No se puede actualizar el prodcto'});
+            return res.status(200).send({productoActualizado});
         })
     },
     uploadImage:function(req,res){
@@ -71,10 +71,10 @@ var controller={
             var extSplit=fileName.split('\.');
             var fileExt=extSplit[1];
             if(fileExt=='png'||fileExt=='jpg'||fileExt=='jpeg'||fileExt=='gif'){
-                Producto.findByIdAndUpdate(productoId,{imagen:fileName},{new:true},(err,prodctoActualizado)=>{
+                Producto.findByIdAndUpdate(productoId,{imagen:fileName},{new:true},(err,productoActualizado)=>{
                     if (err) return res.status(500).send({message:"La imagen no se ha subido"});
-                    if(!prodctoActualizado) return res.status(404).send({message:'El producto no existe y no se subio la imagen'});
-                    return res.status(200).send({producto:prodctoActualizado});
+                    if(!productoActualizado) return res.status(404).send({message:'El producto no existe y no se subio la imagen'});
+                    return res.status(200).send({producto:productoActualizado});
                 });
             }else{
                 fs.unlink(filePath,(err)=>{
