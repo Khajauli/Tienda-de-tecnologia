@@ -1,0 +1,14 @@
+<app-encabezado></app-encabezado>
+<nav id="menu">
+  <ul>
+    <li><a [routerLink]="['/inicio']">Inicio</a></li>
+    <li><a [routerLink]="['/edicion']">Edición</a></li>
+    <li><a [routerLink]="['/catalogo']">Nuestros productos</a></li>
+    <li><a [routerLink]="['/nuevoProducto']">Registro producto</a></li>
+    <li><a [routerLink]="['/contactos']">Contacto</a></li>
+  </ul>
+</nav>
+<section id="content">
+  <router-outlet></router-outlet>
+</section>
+<app-pie></app-pie>

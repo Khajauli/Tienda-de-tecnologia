@@ -1,0 +1,49 @@
+<div class="container">
+    <h2>{{titulo}}</h2>
+    <div class="message success" *ngIf="status=='success'">
+        La producto se ha guardado correctamente, puedes verla <a [routerLink]="['/inicio']">aquí</a>.
+    </div>
+    <div class="message failed" *ngIf="status=='failed'">
+        La producto no se ha podido guardar.
+    </div>
+    <form #productoForm="ngForm" (ngSubmit)="guardarProducto(productoForm)">
+        <p>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="producto.nombre" required>
+            <span *ngIf="nombre.touched && !nombre.valid">
+                Nombre obligatorio
+            </span>
+        </p>
+        <p>
+            <label for="categoria">Categoria</label>
+            <input type="text" name="categoria" #categoria="ngModel" [(ngModel)]="producto.categoria" required>
+            <span *ngIf="categoria.touched && !categoria.valid">
+                categoria obligatoria
+            </span>
+        </p>
+
+        <p>
+            <label for="precio">Precio</label>
+            <input type="number" name="precio" #precio="ngModel" [(ngModel)]="producto.precio" required>
+        </p>
+        <p>
+            <label for="cantidad">Cantidad</label>
+            <input type="number" name="cantidad" #cantidad="ngModel" [(ngModel)]="producto.cantidad" required>
+        </p>
+        <p>
+            <label for="descripcion">Descripcion</label>
+            <input type="text" name="descripcion" #descripcion="ngModel" [(ngModel)]="producto.descripcion" required>
+            <span *ngIf="descripcion.touched && !descripcion.valid">
+                descripcion obligatoria
+            </span>
+        </p>
+        <p>
+            <label for="imagen">Imagen</label>
+            <span *ngIf="producto.imagen" style="float: none;">
+                <img src="{{url+'get-imagen/'+producto.imagen}}" style="width: 100px;">
+            </span>
+            <input type="file" #archivoImagen placeholder="Seleccionar imagen" (change)="imagenChangeEvent($event)">
+        </p>
+        <input type="submit" value="Guardar" [disabled]="!productoForm.form.valid">
+    </form>
+</div>
