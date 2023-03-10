@@ -1,0 +1,74 @@
+/*footer*/
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 20px;
+}
+
+.columna {
+  width: 30%;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 10px 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  margin-left: 50px;
+  font-size: 25px;
+}
+.columna p{
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.redes-sociales {
+  display: flex;
+}
+
+.redes-sociales a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #666;
+  font-size: 25px;
+  width: 50px;
+  height: 50px;
+}
+
+.redes-sociales a:hover {
+  color: #000;
+}
+
+.fa-facebook-f {
+  background-color: #3b5998;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.fa-twitter {
+  background-color: #55acee;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.fa-instagram {
+  background-color: #e4405f;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+}
