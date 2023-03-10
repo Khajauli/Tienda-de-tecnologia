@@ -48,7 +48,7 @@ export class InfoProductoComponent implements OnInit{
   borrarProducto(id:string){
     this._productoService.deleteProducto(id).subscribe(
       response=>{
-          this._router.navigate(['/carnes']);
+          this._router.navigate(['/catalogo']);
       },
       error=>{
         console.log(<any>error);

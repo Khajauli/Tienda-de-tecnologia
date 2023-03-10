@@ -12,13 +12,20 @@ import { ProductoService } from 'src/app/services/producto.service';
 })
 export class CatalogoComponent implements OnInit{
   public productos:Producto[];
+  public seleccionados:Producto[];
   public url:string;
+  public nombre:string;
+  public status:string;
+
 
   constructor(
     private _productoService:ProductoService
   ){
     this.url=Global.url;
     this.productos=[];
+    this.seleccionados=[];
+    this.nombre='';
+    this.status='failed';
   }
 
 
@@ -31,11 +38,30 @@ export class CatalogoComponent implements OnInit{
       if (response.productos){
         this.productos=response.productos;
         console.log(this.productos);
+        this.status='failed';
       }
     },
     error=>{
       console.log(<any>error);
     }
   );
+}
+
+getSeleccionados(){
+  this._productoService.getProductoN(this.nombre).subscribe(
+    response=>{
+      if(response.producto){
+        this.seleccionados=response.producto;
+        console.log(this.seleccionados);
+        this.status='success';
+        
+      }else{
+        console.log("error");
+      }
+    },
+    error=>{
+      console.log(<any>error);
+    }
+  )
 }
 }

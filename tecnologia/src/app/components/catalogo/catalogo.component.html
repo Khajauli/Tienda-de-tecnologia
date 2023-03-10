@@ -1,7 +1,30 @@
 <h2>Catalogo de productos</h2>
+
+<h2>Busque por nombre si producto</h2>
+<input type="text" name="nombren" #nombren="ngModel" [(ngModel)]="nombre" required>
+<button (click)="getSeleccionados()">Buscar</button>
+<div class="message success" *ngIf="status=='success'">
+<ul>
+  <li *ngFor="let seleccionado of seleccionados">
+    <a [routerLink]="['/infoProducto/', seleccionado._id]">
+        <img src="{{url+'get-imagen/'+seleccionado.imagen}}" *ngIf="seleccionado.imagen">
+        <h3>{{seleccionado.nombre}}</h3>
+            <br>
+            <h3>{{seleccionado.descripcion}}</h3>
+            <br>
+            <h3>Nos quedan {{seleccionado.cantidad}}!!</h3>
+            <br>
+            <h3>A tan solo {{seleccionado.precio}}!!</h3>
+    </a>
+  </li>
+</ul>
+<button (click)="getProductos()">Regresar</button>
+</div>
+
+<div class="message failed" *ngIf="status=='failed'">
 <ul>
     <li *ngFor="let producto of productos"  class="productos">
-        <a [routerLink]="['producto/', producto._id]">
+        <a [routerLink]="['/infoProducto/', producto._id]">
             <img src="{{url+'get-imagen/'+producto.imagen}}" *ngIf="producto.imagen">
             <h3>{{producto.nombre}}</h3>
             <br>
@@ -13,3 +36,4 @@
         </a>
     </li>
 </ul>
+</div>

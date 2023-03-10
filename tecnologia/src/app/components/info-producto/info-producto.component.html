@@ -12,7 +12,7 @@
     <h3>{{producto.cantidad}}</h3>
     <h3>{{producto.descripcion}}</h3>
     <p *ngIf="confirm == false">
-        <button [routerLink]="['/editarProducto',producto._id]" class="button-edit">Editar</button>
+        <button [routerLink]="['/edicion',producto._id]" class="button-edit">Editar</button>
         <button (click)="setConfirm(true)" class="button-delete">Borrar</button>
     </p>
 
